@@ -1,0 +1,31 @@
+package EnvironmentTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class EnvironmentSetupTestSample {
+	
+	static String resource_URL = "https://selenium.dev";
+	
+	public static void main(String[] args) {
+		// Chrrome Driver
+		System.setProperty("webdriver.chrome.driver","G:\\LatestEclipse\\Selenium Development\\chromedriver_win32\\chromedriver.exe");
+		WebDriver web_driver = new ChromeDriver();
+		web_driver.get("https://www.selenium.dev");
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Couldn't Resolve");
+		}
+		web_driver.close();
+		
+		// Gecko Driver
+		System.setProperty("webdriver.gecko.driver", "G:\\LatestEclipse\\Selenium Development\\Selenium Workouts\\Sample Project\\SeleniumEnvironmentSetupTest\\Lib\\WebDrivers\\geckodriver.exe");
+		WebDriver gecko_driver = new FirefoxDriver();
+		gecko_driver.get(resource_URL);
+		gecko_driver.close();
+	}
+
+}

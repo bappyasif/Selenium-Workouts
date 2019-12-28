@@ -1,0 +1,28 @@
+package modularSetup;
+
+public class ModularUsage {
+	
+	static String browserPlatform; 
+	
+	// Initializing Browser
+	public static void setBrowser() {
+		browserPlatform = "Chrome";
+	}
+	
+	// Browser Configuration
+	public static void browserConfig() {
+		// Project Location
+		String projectLocation = System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", projectLocation+"")
+	}
+	
+	// Run test
+	public static void commenceTest() {
+		
+	}
+	
+	// Closing Browser
+	public static void closeBrowser() {
+		
+	}
+}

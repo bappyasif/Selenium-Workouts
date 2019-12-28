@@ -1,0 +1,24 @@
+package modularSetup;
+
+public class ModularUsage {
+	
+	// Initializing Browser
+	public static void setBrowser() {
+		String browserPlatform = "Chrome";
+	}
+	
+	// Browser Configuration
+	public static void browserConfig() {
+		
+	}
+	
+	// Run test
+	public static void commenceTest() {
+		
+	}
+	
+	// Closing Browser
+	public static void closeBrowser() {
+		
+	}
+}
