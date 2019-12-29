@@ -1,0 +1,11 @@
+Topics Covered:
+------------------------------
+1. How to create a runnable JAR
+
+2. How to run the test from command line
+-----------------------------------------------------------------
+
+STEP 1 : Create a runnable jar from eclipse project
+
+STEP 2 : Run the jar file from command line
+java -jar name.jar

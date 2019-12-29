@@ -1,0 +1,10 @@
+package configSettings;
+
+import java.util.Properties;
+
+public class PropertiesFileSettingsSetup {
+	public static void readFromPropertiesFile() {
+		// Create A Properties Object
+		Properties propObject = new Properties();
+	}
+}

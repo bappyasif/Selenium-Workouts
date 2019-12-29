@@ -1,0 +1,13 @@
+package configSettings;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class PropertiesFileSettingsSetup {
+	public static void readFromPropertiesFile() {
+		// Create A Properties Object
+		Properties propObject = new Properties();
+		InputStream inputStream = new FileInputStream("");
+	}
+}
