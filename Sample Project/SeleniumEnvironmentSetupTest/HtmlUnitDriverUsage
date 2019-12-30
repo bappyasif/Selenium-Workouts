@@ -1,0 +1,26 @@
+Today we will learn :
+-------------------------------
+1. What is HtmlUnit Driver
+
+2. How to run test with HtmlUnit Driver
+
+HtmlUnitDriver unit_driver = new HtmlUnitDriver();
+unit_driver.get("http://seleniumhq.org/"); 
+
+3. How to emulate other browsers
+
+HtmlUnitDriver unit_driver = new HtmlUnitDriver(BrowserVersion.INTERNET_EXPLORER);
+
+_______________________________________________________________
+
+Helpful Tips:
+-------------------
+How to confirm and validate that your test ran on some specific browser
+
+WebClient web_client = 	(WebClient) get(unit_driver, "webClient");
+
+	private static Object get(Object object, String field) throws Exception {
+		Field accessible_field = object.getClass().getDeclaredField(field);
+		accessible_field.setAccessible(true);
+		return accessible_field.get(object);
+	}

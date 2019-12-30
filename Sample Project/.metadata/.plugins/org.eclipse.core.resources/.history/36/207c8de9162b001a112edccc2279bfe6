@@ -1,0 +1,41 @@
+package headlessBrowsers;
+
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+
+public class HtmlUnitrDriverExample {
+
+	static String base_URL = "http://www.seleniumhq.org/";
+
+	public static void main(String[] args) {
+
+
+		// Browsers Specific
+
+
+	}
+	
+	public static void browserSpecefic() {
+		HtmlUnitDriver unit_driver = new HtmlUnitDriver(BrowserVersion.INTERNET_EXPLORER);
+		
+		unit_driver.get(base_URL);
+		
+		System.out.println(unit_driver.getTitle());
+		
+		unit_driver.close();
+	}
+
+	public static void genericBrowsers() {
+		// Generic Invocation Of Browsers
+		HtmlUnitDriver unit_driver = new HtmlUnitDriver();
+
+		unit_driver.get(base_URL);
+
+		System.out.println("Title Of This Page : "+unit_driver.getTitle());
+
+		unit_driver.close();
+
+	}
+
+}

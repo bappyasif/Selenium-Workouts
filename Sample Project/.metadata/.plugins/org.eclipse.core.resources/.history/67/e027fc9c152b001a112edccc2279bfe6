@@ -1,0 +1,12 @@
+package headlessBrowsers;
+
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+public class HtmlUnitrDriverExample {
+	
+	public static void main(String[] args) {
+		HtmlUnitDriver unit_driver = new HtmlUnitDriver();
+		
+	}
+	
+}
