@@ -1,0 +1,14 @@
+package headlessBrowsers;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+
+public class PhantomJSDriverUsage {
+	static String base_URL = "http://www.seleniumhq.org/";
+	public static void main(String[] args) {
+		String project_dir = System.getProperty("user.dir");
+		System.setProperty("phantomjs.binary.path", project_dir+"\\Lib\\phantomJS\\phantomjs.exe");
+		WebDriver phnatom_driver = new PhantomJSDriver();
+		phnatom_driver.get(arg0);
+	}
+}
