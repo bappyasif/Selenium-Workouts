@@ -1,4 +1,4 @@
-package EnvironmentTest;
+package environmentTest;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +31,7 @@ public class ModularRunForBrowsersPlatform {
 			System.setProperty("webdriver.chrome.driver", project_path+"\\Lib\\Web Drivers\\Chrome Driver\\chromedriver.exe");
 			web_driver = new ChromeDriver();
 		} else if (browser_platform.contains("IE")) {
-			System.setProperty("webdriver.ie.driver", project_path+"\\Lib\\Web Drivers\\IE_Driver\\IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", project_path+"\\Lib\\Web Drivers\\IE Driver\\IEDriverServer.exe");
 			// Changing Settings For Zoom
 //			InternetExplorerOptions capabilities = new InternetExplorerOptions();
 //			capabilities.ignoreZoomSettings();
