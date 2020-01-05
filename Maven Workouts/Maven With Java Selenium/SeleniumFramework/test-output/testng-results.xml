@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8383" started-at="2020-01-05T21:40:12 BDT" finished-at="2020-01-05T21:40:20 BDT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8383" started-at="2020-01-05T21:40:12 BDT" finished-at="2020-01-05T21:40:20 BDT">
+      <class name="environmentTest.EnvironmentChekForTestNG">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:environmentTest.EnvironmentChekForTestNG@1c3a4799]" name="setupBrowser" is-config="true" duration-ms="2904" started-at="2020-01-05T21:40:12 BDT" finished-at="2020-01-05T21:40:15 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:environmentTest.EnvironmentChekForTestNG@1c3a4799]" name="urlNavigation" duration-ms="2252" started-at="2020-01-05T21:40:15 BDT" finished-at="2020-01-05T21:40:17 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- urlNavigation -->
+        <test-method status="PASS" signature="commenceTest()[pri:1, instance:environmentTest.EnvironmentChekForTestNG@1c3a4799]" name="commenceTest" duration-ms="888" started-at="2020-01-05T21:40:17 BDT" finished-at="2020-01-05T21:40:18 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commenceTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:environmentTest.EnvironmentChekForTestNG@1c3a4799]" name="tearDown" is-config="true" duration-ms="2311" started-at="2020-01-05T21:40:18 BDT" finished-at="2020-01-05T21:40:20 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- environmentTest.EnvironmentChekForTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
