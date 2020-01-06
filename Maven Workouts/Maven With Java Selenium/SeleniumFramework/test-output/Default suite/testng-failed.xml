@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="environmentTest.EnvironmentChekForTestNG">
+      <class name="extentsReportsUsageExample.BasicUsageWithTestNG">
         <methods>
           <include name="commenceTest"/>
+          <include name="urlNavigation"/>
+          <include name="preparingReport"/>
+          <include name="teardownBrowser"/>
           <include name="setupBrowser"/>
-          <include name="tearDown"/>
+          <include name="setupEnvironment"/>
         </methods>
-      </class> <!-- environmentTest.EnvironmentChekForTestNG -->
+      </class> <!-- extentsReportsUsageExample.BasicUsageWithTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
