@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNGSuiteExampleWithMethodInclusion"
+	parallel="classes">
+	<test thread-count="5" name="TestNGExamplesTestsCases"
+		parallel="classes">
+		<classes>
+			<class name="testNGExamples.TestNGUsage"/>
+			<class name="testNGExamples.AnotherUsage">
+				<methods>
+					<exclude name="findElement"></exclude>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- TestNGExamplesTestsCases -->
+</suite> <!-- TestNGSuiteExampleWithMethodInclusion -->

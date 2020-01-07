@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="1" total="6" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11377" started-at="2020-01-06T22:07:43 BDT" finished-at="2020-01-06T22:07:55 BDT">
+  <suite name="TestNGSuiteExampleWithMethodInclusion" duration-ms="15403" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:20 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11377" started-at="2020-01-06T22:07:43 BDT" finished-at="2020-01-06T22:07:55 BDT">
-      <class name="extentsReportsUsageExample.BasicUsageWithTestNG">
-        <test-method status="PASS" signature="setupEnvironment()[pri:0, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="setupEnvironment" is-config="true" duration-ms="123" started-at="2020-01-06T22:07:43 BDT" finished-at="2020-01-06T22:07:43 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupEnvironment -->
-        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="setupBrowser" is-config="true" duration-ms="2991" started-at="2020-01-06T22:07:43 BDT" finished-at="2020-01-06T22:07:46 BDT">
+    <test name="TestNGExamplesTestsCases" duration-ms="15403" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:20 BDT">
+      <class name="testNGExamples.TestNGUsage">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="setupBrowser" is-config="true" duration-ms="2245" started-at="2020-01-07T22:02:08 BDT" finished-at="2020-01-07T22:02:10 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="urlNavigation" duration-ms="3412" started-at="2020-01-06T22:07:46 BDT" finished-at="2020-01-06T22:07:50 BDT">
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="urlNavigation" duration-ms="1680" started-at="2020-01-07T22:02:10 BDT" finished-at="2020-01-07T22:02:12 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- urlNavigation -->
-        <test-method status="PASS" signature="commenceTest()[pri:1, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="commenceTest" duration-ms="2621" started-at="2020-01-06T22:07:50 BDT" finished-at="2020-01-06T22:07:52 BDT">
+        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.TestNGUsage@10bbd20a]" name="commenceTest" duration-ms="851" started-at="2020-01-07T22:02:12 BDT" finished-at="2020-01-07T22:02:13 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="teardownBrowser()[pri:0, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="teardownBrowser" is-config="true" duration-ms="2329" started-at="2020-01-06T22:07:52 BDT" finished-at="2020-01-06T22:07:55 BDT">
+        <test-method status="PASS" signature="findElement()[pri:2, instance:testNGExamples.TestNGUsage@10bbd20a]" name="findElement" duration-ms="2864" started-at="2020-01-07T22:02:13 BDT" finished-at="2020-01-07T22:02:16 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardownBrowser -->
-        <test-method status="PASS" signature="preparingReport()[pri:0, instance:extentsReportsUsageExample.BasicUsageWithTestNG@48503868]" name="preparingReport" is-config="true" duration-ms="282" started-at="2020-01-06T22:07:55 BDT" finished-at="2020-01-06T22:07:55 BDT">
+        </test-method> <!-- findElement -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="tearDown" is-config="true" duration-ms="2370" started-at="2020-01-07T22:02:18 BDT" finished-at="2020-01-07T22:02:20 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preparingReport -->
-      </class> <!-- extentsReportsUsageExample.BasicUsageWithTestNG -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- testNGExamples.TestNGUsage -->
+      <class name="testNGExamples.AnotherUsage">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="setupBrowser" is-config="true" duration-ms="2966" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:08 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="urlNavigation" duration-ms="1698" started-at="2020-01-07T22:02:10 BDT" finished-at="2020-01-07T22:02:12 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- urlNavigation -->
+        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.AnotherUsage@48503868]" name="commenceTest" duration-ms="832" started-at="2020-01-07T22:02:12 BDT" finished-at="2020-01-07T22:02:13 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commenceTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="tearDown" is-config="true" duration-ms="2350" started-at="2020-01-07T22:02:16 BDT" finished-at="2020-01-07T22:02:18 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testNGExamples.AnotherUsage -->
+    </test> <!-- TestNGExamplesTestsCases -->
+  </suite> <!-- TestNGSuiteExampleWithMethodInclusion -->
 </testng-results>
