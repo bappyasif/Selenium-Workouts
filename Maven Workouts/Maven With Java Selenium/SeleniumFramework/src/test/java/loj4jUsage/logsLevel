@@ -1,0 +1,53 @@
+Notes About Log4j2 Logs: 
+
+Log4j2 Will Pick Log4j2.Properties(log4j2.properties) 
+File Over Log4j2.XML(log4j2.xml) File, 
+So Change log4j2.properties File Name To Something Different Pattern
+So That log4j2.xml File Can Be Accessed.
+
+Log4j.properties Vs Log4j.XML
+
+Properties can be defined by a properties file or by an XML file. 
+Log4j looks for a file named log4j.xml and then for a file named log4j.properties. 
+Both must be placed in the src folder.
+
+The property file is less verbose than an XML file. 
+The XML requires the log4j.dtd to be placed in the source folder as well. 
+The XML requires a dom4j.jar which might not be included in older Java versions.
+
+The properties file does not support some advanced configuration 
+options like Filters, custom ErrorHandlers and a special type of appenders, 
+i.e. AsyncAppender. ErrorHandlers defines how errors in log4j itself are handled, 
+for example badly configured appenders. Filters are more interesting. 
+From the available filters, I think that the level range filter 
+is really missing for property files.
+
+This filter allows to define that a[n] appender should receive log messages 
+from Level INFO to WARN. This allows to split log messages across different 
+logfiles. One for DEBUGGING messages, another for warnings, ...
+
+The property appender only supports a minimum level. If you set it do INFO, 
+you will receive WARN, ERROR and FATAL messages as well.
+
+Log4j - log levels:
+
+TRACE
+Most detailed information. Expect these to be written to logs only. Since version 1.2.12
+
+DEBUG
+Detailed information on the flow through the system. Expect these to be written to logs only. Generally speaking, most lines logged by your application should be written as DEBUG
+
+INFO
+Interesting runtime events (startup/shutdown). Expect these to be immediately visible on a console, so be conservative and keep to a minimum.
+
+WARN
+Use of deprecated APIs, poor use of API, 'almost' errors, other runtime situations that are undesirable or unexpected, but not necessarily "wrong". Expect these to be immediately visible on a status console.
+
+ERROR
+Other runtime errors or unexpected conditions. Expect these to be immediately visible on a status console.
+
+FATAL
+Severe errors that cause premature termination. Expect these to be immediately visible on a status console.
+
+OFF
+The highest possible rank and is intended to turn off logging.

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+	<Properties>
+		<!-- Provide Base-path For Logger File -->
+		<!-- Using Previously Created Logs Folder -->
+		<Property name="basePath">logs</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- Providing Log4j2 XML Logger File Name -->
+		<!-- To Configure Logger File Settings -->
+		<!-- Change Append(append) Value To False(false) To Overwrite Logs -->
+		<!-- By Default It's(append) Set To True(true) -->
+		<RollingFile name="fileLogger" append="false"
+			fileName="${basePath}/log4j2xml.log"
+			filePattern="${basePath}/app-info-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<param name="Append" value="false"></param>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="loj4jUsage" level="trace"
+			additivity="true">
+			<appender-ref ref="fileLogger" level="trace" />
+		</Logger>
+		<Root level="trace" additivity="false">
+			<appender-ref ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>

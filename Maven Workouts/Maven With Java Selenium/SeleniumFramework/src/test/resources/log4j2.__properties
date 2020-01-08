@@ -1,0 +1,35 @@
+name=PropertiesConfig
+property.filename = logs
+! Logger Options For File And Console Use Comma As A Separator
+appenders = console, file
+
+! For Console
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+
+! For File
+appender.file.type = File
+appender.file.name = LOGFILE
+appender.file.fileName=${filename}/4j2Logs.log
+appender.file.layout.type=PatternLayout
+appender.file.layout.pattern=[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+! Appender File By Default Appends Logs(true) Sequentially As It Runs.
+! To Overwrite Previous Logs Change It To False
+appender.file.append=false
+
+ 
+! Configuring File Loggers Appender.
+! To Turn Off Loggers Use logger.file.level To Off(off)
+loggers=file
+logger.file.name=loj4jUsage
+logger.file.level = trace
+logger.file.appenderRefs = file
+logger.file.appenderRef.file.ref = LOGFILE
+
+! Configuring Loggers, From Root Logger
+! To Turn Off Loggers Use logger.file.level To Off(off)
+rootLogger.level = trace
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
