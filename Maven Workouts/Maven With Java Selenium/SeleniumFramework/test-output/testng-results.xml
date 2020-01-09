@@ -1,51 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="6" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNGSuiteExampleWithMethodInclusion" duration-ms="15403" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:20 BDT">
+  <suite name="Default suite" duration-ms="7993" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:46 BDT">
     <groups>
     </groups>
-    <test name="TestNGExamplesTestsCases" duration-ms="15403" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:20 BDT">
-      <class name="testNGExamples.TestNGUsage">
-        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="setupBrowser" is-config="true" duration-ms="2245" started-at="2020-01-07T22:02:08 BDT" finished-at="2020-01-07T22:02:10 BDT">
+    <test name="Default test" duration-ms="7993" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:46 BDT">
+      <class name="testNGExamples.AccessingPropertiesFileUsingTestNG">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="setupBrowser" is-config="true" duration-ms="3179" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:41 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="urlNavigation" duration-ms="1680" started-at="2020-01-07T22:02:10 BDT" finished-at="2020-01-07T22:02:12 BDT">
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="urlNavigation" duration-ms="1477" started-at="2020-01-09T22:28:41 BDT" finished-at="2020-01-09T22:28:43 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- urlNavigation -->
-        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.TestNGUsage@10bbd20a]" name="commenceTest" duration-ms="851" started-at="2020-01-07T22:02:12 BDT" finished-at="2020-01-07T22:02:13 BDT">
+        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="commenceTest" duration-ms="962" started-at="2020-01-09T22:28:43 BDT" finished-at="2020-01-09T22:28:44 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="findElement()[pri:2, instance:testNGExamples.TestNGUsage@10bbd20a]" name="findElement" duration-ms="2864" started-at="2020-01-07T22:02:13 BDT" finished-at="2020-01-07T22:02:16 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- findElement -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.TestNGUsage@10bbd20a]" name="tearDown" is-config="true" duration-ms="2370" started-at="2020-01-07T22:02:18 BDT" finished-at="2020-01-07T22:02:20 BDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="tearDown" is-config="true" duration-ms="2337" started-at="2020-01-09T22:28:44 BDT" finished-at="2020-01-09T22:28:46 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testNGExamples.TestNGUsage -->
-      <class name="testNGExamples.AnotherUsage">
-        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="setupBrowser" is-config="true" duration-ms="2966" started-at="2020-01-07T22:02:05 BDT" finished-at="2020-01-07T22:02:08 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="urlNavigation" duration-ms="1698" started-at="2020-01-07T22:02:10 BDT" finished-at="2020-01-07T22:02:12 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- urlNavigation -->
-        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.AnotherUsage@48503868]" name="commenceTest" duration-ms="832" started-at="2020-01-07T22:02:12 BDT" finished-at="2020-01-07T22:02:13 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.AnotherUsage@48503868]" name="tearDown" is-config="true" duration-ms="2350" started-at="2020-01-07T22:02:16 BDT" finished-at="2020-01-07T22:02:18 BDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testNGExamples.AnotherUsage -->
-    </test> <!-- TestNGExamplesTestsCases -->
-  </suite> <!-- TestNGSuiteExampleWithMethodInclusion -->
+      </class> <!-- testNGExamples.AccessingPropertiesFileUsingTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
