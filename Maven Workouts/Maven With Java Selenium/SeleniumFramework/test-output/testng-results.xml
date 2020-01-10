@@ -1,29 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7993" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:46 BDT">
+  <suite name="Default suite" duration-ms="14116" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:57 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7993" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:46 BDT">
-      <class name="testNGExamples.AccessingPropertiesFileUsingTestNG">
-        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="setupBrowser" is-config="true" duration-ms="3179" started-at="2020-01-09T22:28:38 BDT" finished-at="2020-01-09T22:28:41 BDT">
+    <test name="Default test" duration-ms="14116" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:57 BDT">
+      <class name="testNGExamples.UsingTestNGDataProvider">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="setupBrowser" is-config="true" duration-ms="3168" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:46 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="urlNavigation" duration-ms="1477" started-at="2020-01-09T22:28:41 BDT" finished-at="2020-01-09T22:28:43 BDT">
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="urlNavigation" duration-ms="3867" started-at="2020-01-10T23:32:46 BDT" finished-at="2020-01-10T23:32:50 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- urlNavigation -->
-        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="commenceTest" duration-ms="962" started-at="2020-01-09T22:28:43 BDT" finished-at="2020-01-09T22:28:44 BDT">
+        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2246" started-at="2020-01-10T23:32:51 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:53 BDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin1234]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.AccessingPropertiesFileUsingTestNG@184f6be2]" name="tearDown" is-config="true" duration-ms="2337" started-at="2020-01-09T22:28:44 BDT" finished-at="2020-01-09T22:28:46 BDT">
+        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2151" started-at="2020-01-10T23:32:53 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:55 BDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin1234]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testNGExamples.AccessingPropertiesFileUsingTestNG -->
+        </test-method> <!-- commenceTest -->
+        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2141" started-at="2020-01-10T23:32:55 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:57 BDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commenceTest -->
+      </class> <!-- testNGExamples.UsingTestNGDataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

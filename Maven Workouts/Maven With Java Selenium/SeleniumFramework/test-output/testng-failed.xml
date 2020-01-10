@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [TestNGSuiteExampleWithMethodInclusion]" parallel="classes">
-  <test thread-count="5" name="TestNGExamplesTestsCases(failed)" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNGExamples.TestNGUsage">
+      <class name="testNGExamples.UsingTestNGDataProvider">
         <methods>
           <include name="setupBrowser"/>
-          <include name="findElement"/>
-          <include name="tearDown"/>
+          <include name="commenceTest" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- testNGExamples.TestNGUsage -->
+      </class> <!-- testNGExamples.UsingTestNGDataProvider -->
     </classes>
-  </test> <!-- TestNGExamplesTestsCases(failed) -->
-</suite> <!-- Failed suite [TestNGSuiteExampleWithMethodInclusion] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
