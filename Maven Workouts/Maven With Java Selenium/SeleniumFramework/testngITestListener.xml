@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ITestListener_Suite">
+	<listeners>
+		<listener class-name="testngListenersUsageExamples.TestNGListenersExampleTest"></listener>
+	</listeners>
+	<test thread-count="5" name="Test_Cases">
+		<classes>
+			<class
+				name="testngListenersUsageExamples.TestNGListenersAnnotationSetings" />
+			<class
+				name="testngListenersUsageExamples.TestNGListenersAnnotationSetup" />
+		</classes>
+	</test> <!-- Test_Cases -->
+</suite> <!-- ITestListener_Suite -->

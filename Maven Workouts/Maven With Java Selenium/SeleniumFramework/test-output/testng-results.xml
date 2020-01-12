@@ -2,68 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14116" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:57 BDT">
+  <suite name="Default suite" duration-ms="48" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14116" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:57 BDT">
-      <class name="testNGExamples.UsingTestNGDataProvider">
-        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="setupBrowser" is-config="true" duration-ms="3168" started-at="2020-01-10T23:32:43 BDT" finished-at="2020-01-10T23:32:46 BDT">
+    <test name="Default test" duration-ms="48" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+      <class name="testNGExamples.anotherTestNGPriorityExample">
+        <test-method status="PASS" signature="testCaseExampleTwo()[pri:-1, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleTwo" duration-ms="7" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="urlNavigation" duration-ms="3867" started-at="2020-01-10T23:32:46 BDT" finished-at="2020-01-10T23:32:50 BDT">
+        </test-method> <!-- testCaseExampleTwo -->
+        <test-method status="PASS" signature="testCaseExampleFour()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleFour" duration-ms="1" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- urlNavigation -->
-        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2246" started-at="2020-01-10T23:32:51 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:53 BDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin1234]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testCaseExampleFour -->
+        <test-method status="PASS" signature="testCaseExampleOne()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleOne" duration-ms="0" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2151" started-at="2020-01-10T23:32:53 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:55 BDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[User]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin1234]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testCaseExampleOne -->
+        <test-method status="PASS" signature="testCaseExampleThree()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleThree" duration-ms="1" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- commenceTest -->
-        <test-method status="PASS" signature="commenceTest(java.lang.String, java.lang.String)[pri:1, instance:testNGExamples.UsingTestNGDataProvider@3712b94]" name="commenceTest" duration-ms="2141" started-at="2020-01-10T23:32:55 BDT" data-provider="Test_Data" finished-at="2020-01-10T23:32:57 BDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- commenceTest -->
-      </class> <!-- testNGExamples.UsingTestNGDataProvider -->
+        </test-method> <!-- testCaseExampleThree -->
+      </class> <!-- testNGExamples.anotherTestNGPriorityExample -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
