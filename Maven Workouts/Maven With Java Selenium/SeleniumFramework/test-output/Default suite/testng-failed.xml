@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNGExamples.TestCasesPriorityExample">
+      <class name="testNGExamples.MultipleBrowsersParallelTesting">
         <methods>
-          <include name="tearDown"/>
-          <include name="setupBrowser"/>
           <include name="commenceTest"/>
+          <include name="navigationTest"/>
+          <include name="setupBrowser"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- testNGExamples.TestCasesPriorityExample -->
+      </class> <!-- testNGExamples.MultipleBrowsersParallelTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

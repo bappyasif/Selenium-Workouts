@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Grouping Suite">
+	<test name="Test Cases">
+
+		<groups>
+			<!-- Using RegEx -->
+			<!-- <run> <include name="windows.*">
+			</include> </run> 
+			-->
+
+			<!-- Using Class level Tests -->
+			<run>
+				<include name="AllClassTestCases"></include>
+			</run>
+
+		</groups>
+
+
+		<classes>
+			<class name="testNGExamples.GroupingTestsCalssLevel" />
+		</classes>
+	</test> <!-- Test Cases -->
+</suite> <!-- Grouping Suite -->

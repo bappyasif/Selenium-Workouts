@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+  <suite name="Grouping Suite" duration-ms="64" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
     <groups>
+      <group name="linux.regression">
+        <method signature="GroupingTestsCalssLevel.linuxUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="linuxUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- linux.regression -->
+      <group name="windows.regression">
+        <method signature="GroupingTestsCalssLevel.WindowsUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="WindowsUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- windows.regression -->
+      <group name="AllClassTestCases">
+        <method signature="GroupingTestsCalssLevel.WindowsUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="WindowsUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.firstUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="firstUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.fourthUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="fourthUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.linuxUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="linuxUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.secondUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="secondUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.thirdUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="thirdUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- AllClassTestCases -->
+      <group name="regression">
+        <method signature="GroupingTestsCalssLevel.fourthUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="fourthUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.thirdUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="thirdUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="GroupingTestsCalssLevel.fourthUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="fourthUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.secondUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="secondUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- smoke -->
+      <group name="sanity">
+        <method signature="GroupingTestsCalssLevel.firstUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="firstUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+        <method signature="GroupingTestsCalssLevel.thirdUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="thirdUserTestCase" class="testNGExamples.GroupingTestsCalssLevel"/>
+      </group> <!-- sanity -->
     </groups>
-    <test name="Default test" duration-ms="48" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
-      <class name="testNGExamples.anotherTestNGPriorityExample">
-        <test-method status="PASS" signature="testCaseExampleTwo()[pri:-1, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleTwo" duration-ms="7" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+    <test name="Test Cases" duration-ms="64" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
+      <class name="testNGExamples.GroupingTestsCalssLevel">
+        <test-method status="PASS" signature="WindowsUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="WindowsUserTestCase" duration-ms="8" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCaseExampleTwo -->
-        <test-method status="PASS" signature="testCaseExampleFour()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleFour" duration-ms="1" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+        </test-method> <!-- WindowsUserTestCase -->
+        <test-method status="PASS" signature="firstUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="firstUserTestCase" duration-ms="1" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCaseExampleFour -->
-        <test-method status="PASS" signature="testCaseExampleOne()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleOne" duration-ms="0" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+        </test-method> <!-- firstUserTestCase -->
+        <test-method status="PASS" signature="fourthUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="fourthUserTestCase" duration-ms="1" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCaseExampleOne -->
-        <test-method status="PASS" signature="testCaseExampleThree()[pri:0, instance:testNGExamples.anotherTestNGPriorityExample@10bbd20a]" name="testCaseExampleThree" duration-ms="1" started-at="2020-01-12T21:53:25 BDT" finished-at="2020-01-12T21:53:25 BDT">
+        </test-method> <!-- fourthUserTestCase -->
+        <test-method status="PASS" signature="linuxUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="linuxUserTestCase" duration-ms="1" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testCaseExampleThree -->
-      </class> <!-- testNGExamples.anotherTestNGPriorityExample -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- linuxUserTestCase -->
+        <test-method status="PASS" signature="secondUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="secondUserTestCase" duration-ms="2" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondUserTestCase -->
+        <test-method status="PASS" signature="thirdUserTestCase()[pri:0, instance:testNGExamples.GroupingTestsCalssLevel@396f6598]" name="thirdUserTestCase" duration-ms="1" started-at="2020-01-13T22:18:36 BDT" finished-at="2020-01-13T22:18:36 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdUserTestCase -->
+      </class> <!-- testNGExamples.GroupingTestsCalssLevel -->
+    </test> <!-- Test Cases -->
+  </suite> <!-- Grouping Suite -->
 </testng-results>

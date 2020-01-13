@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Multiple Browsers Test Suite" parallel="tests">
+	<test name="Test Cases For Chrome" thread-count="2">
+		
+		<parameter name="browserName" value="Chrome"></parameter>
+		
+		<classes>
+			<class name="testNGExamples.MultipleBrowsersParallelTesting" />
+		</classes>
+	</test>
+	<test name="Test Cases For IE" thread-count="5">
+		
+		<parameter name="browserName" value="IE"></parameter>
+		
+		<classes>
+			<class name="testNGExamples.MultipleBrowsersParallelTesting" />
+		</classes>
+	</test> <!-- Test Cases -->
+</suite> <!-- Multiple Browsers Test Suite -->
