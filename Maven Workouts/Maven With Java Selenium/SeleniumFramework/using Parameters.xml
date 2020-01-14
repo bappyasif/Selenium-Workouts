@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Param Suite">
+	<!-- Parameters Defined Suite Level -->
+	
+	<!-- When Parameter Is Not Defined While Using Optional --> 
+	<!-- In Test Case Declaration Then Null Will Be Invoked Unless -->
+	<!-- Optional Value Is Set In That Test Case Declaration -->
+	
+	<!-- <parameter name="paramEx" value="selenium"></parameter> -->
+	
+	<test thread-count="5" name="Test Cases">
+	
+		<!-- Parameters Defined Test Level -->
+		<parameter name="exParam" value="automation"></parameter>
+		<classes>
+			<class name="testNGExamples.UsingParameters"></class>
+		</classes>
+		
+	</test> <!-- Test Cases -->
+</suite> <!-- Param Suite -->
