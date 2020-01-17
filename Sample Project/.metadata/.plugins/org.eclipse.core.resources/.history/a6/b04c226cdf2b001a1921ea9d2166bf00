@@ -1,8 +1,0 @@
-package headlessBrowsers;
-
-public class PhantomJSDriverUsage {
-	public static void main(String[] args) {
-		String project_dir = System.getProperty("user.dir");
-		System.setProperty("phantomjs.binary.path", project_dir+"\\Lib\\phantomJS\\phantomjs.exe");
-	}
-}

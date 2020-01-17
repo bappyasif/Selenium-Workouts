@@ -1,9 +1,0 @@
-package EnvironmentTest;
-
-public class EnvironmentSetupTestSample {
-	
-	public static void main(String[] args) {
-		WebDriver web_driver = new ChromeDriver();
-	}
-
-}
