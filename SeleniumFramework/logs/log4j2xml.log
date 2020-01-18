@@ -1,5 +1,0 @@
-[INFO ] 2020-01-08 21:54:28.602 [main] ExampleTest - Information Log For TestCase
-[ERROR] 2020-01-08 21:54:28.605 [main] ExampleTest - Error Message If Any
-[WARN ] 2020-01-08 21:54:28.605 [main] ExampleTest - Message Supplied As Warning
-[FATAL] 2020-01-08 21:54:28.605 [main] ExampleTest - Object Message For Fatality
-[TRACE] 2020-01-08 21:54:28.605 [main] ExampleTest - This Is A Trace Level Logger Message.  
