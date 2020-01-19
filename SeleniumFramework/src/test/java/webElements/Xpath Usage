@@ -1,0 +1,19 @@
+Name,Selector,Type,Count
+password_span,
+//input[@name="txtPassword" and @id="divPassword"],
+Xpath,0
+username_span,//input[starts-with(@name,"txtU") or @id="txtUsername"],
+Xpath,1
+txtusername_textbox,//input[starts-with(@name,"txt")],
+Xpath,2
+txtusername_textbox,//input[starts-with(@name,"txtUsername")],
+Xpath,1
+loginPanel_div,//div[text()='LOGIN Panel'],
+Xpath,1
+forgotYourPassword?_link,//a[contains(text(),"Forgot")],
+Xpath,1
+txtpassword_password_textbox,//*[@type='password'][@name='txtPassword'],
+Xpath,1
+txtusername_textbox,//input[@type='text'][@name='txtUsername'],
+Xpath,1
+username_span,//*[text()='Username'],Xpath,1
