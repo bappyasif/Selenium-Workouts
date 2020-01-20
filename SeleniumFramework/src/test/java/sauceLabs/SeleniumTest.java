@@ -25,7 +25,7 @@ public class SeleniumTest {
 		capabilities.setCapability("platform", "Windows 10");
 		capabilities.setCapability("version", "79.0");
 		capabilities.setCapability("build", "Onboarding Sample App - Java-TestNG");
-		capabilities.setCapability("name", "3-cross-browser");
+		capabilities.setCapability("name", "googleSearch");
 
 		/** If you're accessing the EU data center, use the following endpoint:.
 		 * https://ondemand.eu-central-1.saucelabs.com/wd/hub

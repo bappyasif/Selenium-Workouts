@@ -29,19 +29,24 @@ public class AnotherExample {
 		capabilities.setCapability("platform", "Windows 10");
 		capabilities.setCapability("version", "79.0");
 		capabilities.setCapability("build", "Onboarding Sample App - Java-TestNG");
-		capabilities.setCapability("name", "3-cross-browser");
+		//capabilities.setCapability("idle-timeout", 2);
+		capabilities.setCapability("idleTimeout", 2);
+		capabilities.setCapability("commandTimeout", 2);
+		capabilities.setCapability("name", "sauceDemo");
 
 		web_driver = new RemoteWebDriver(new URL(URL), capabilities);
 
 		commenceLogin();
 
 		System.out.println("Test Done...");
-		web_driver.close();
+		//web_driver.close();
+		web_driver.quit();
 
 	}
 
 	public static void commenceLogin() {
 		// Perform actions on HTML elements, entering text and submitting the form
+		web_driver.get(base_URL);
 		WebElement usernameElement     = web_driver.findElement(By.xpath("//input[@id='user-name']"));
 		WebElement passwordElement     = web_driver.findElement(By.xpath("//input[@id='password']"));
 		//WebElement formElement        = web_driver.findElement(By.id("loginForm"));
