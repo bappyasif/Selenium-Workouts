@@ -51,7 +51,7 @@ public class HandlingMultipleWindowsExamples {
 
 	public static void commenceNavigation() {
 		web_driver.get(base_URL);
-		//web_driver.manage().window().maximize();
+		web_driver.manage().window().maximize();
 		web_driver.manage().deleteAllCookies();
 		web_driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.MILLISECONDS);
 		web_driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
@@ -59,14 +59,104 @@ public class HandlingMultipleWindowsExamples {
 	}
 
 	public static void commenceTest() throws InterruptedException {
-		JavascriptExecutor jsExecutor = (JavascriptExecutor)web_driver;
-		String page_title = "";
 		
+		Actions actions = new Actions(web_driver);
+		Action action;
+		
+		//WebElement all_courses  = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
+		WebElement all_courses  = web_driver.findElement(By.linkText("Courses"));
+		
+		actions.click(all_courses);
+//		action = actions
+//				.moveToElement(all_courses)
+//				.click(all_courses)
+//				.build();
+//		
+//		action.perform();
+		
+		searchOptionOnEdureka();
+		
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void searchOptionOnEdureka() {
 		Actions action_builders = new Actions(web_driver);
 		
+		Action action_series;
+		
+		
+		WebElement search_input = web_driver.findElement(By.xpath("//input[@id=\"search-inp3\"]"));
+		//WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeahead__button new_search_typeahead_button\"]"));
+		WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeaheadbutton\"]"));
+		WebElement search_overlay = web_driver.findElement(By.xpath("//input[@id=\"search-inp-overlay-new\"]"));
+		
+		//search_input.sendKeys("Selenium Certification");
+		//action_builders.moveToElement(search_input).sendKeys("Selenium Certification");
+		//action_builders.sendKeys(search_input, "Selenium Certification");
+		//search_button.click();
+		
+		
+		action_series = action_builders
+				.moveToElement(search_input)
+				.sendKeys(search_input, "Selenium Certification")
+//				.moveToElement(search_overlay)
+//				.sendKeys(search_overlay, Keys.ENTER)
+//				.sendKeys(Keys.ENTER)
+//				.sendKeys(search_input, Keys.ENTER)
+				.moveToElement(search_button)
+				.click(search_button)
+				.click()
+//				.moveToElement(search_button)
+//				.keyDown(search_button, Keys.SHIFT)
+//				.keyUp(search_button, Keys.SHIFT)
+				.build();
+		
+		action_series.perform();
+		
+		//Thread.sleep(4000);
+		//search_button.click();
+		//search_input.submit();
+//		action_series = action_builders
+//				.moveToElement(search_input)
+//				.sendKeys(Keys.ENTER)
+//				.build();
+//		//action_series.perform();
+		//action_builders.sendKeys(search_input, Keys.ENTER);
+
+		//action_builders.sendKeys(search_overlay, Keys.ENTER);
+		//search_overlay.submit();
+		//search_overlay.sendKeys(Keys.ENTER);
+		//search_input.sendKeys(Keys.ENTER);
+		
+//		anotherSeries(action_builders, search_overlay);
+		
+		
+		System.out.println(web_driver.getTitle());
+	}
+	
+//	public static void anotherSeries(Actions action_builders, WebElement search_overlay) throws InterruptedException {
+//		Action another_series;
+//		another_series = action_builders
+//				.moveToElement(search_overlay)
+//				.sendKeys(Keys.ENTER)
+//				.build();
+//		//action_series.perform();
+//		//action_series = action_builders.moveToElement(search_overlay).sendKeys(Keys.ENTER).build();
+//		//another_series = action_builders.sendKeys(search_overlay, Keys.ENTER).build();
+//		another_series.perform();
+//		Thread.sleep(4000);
+//	}
+
+	public static void testOnEdurekaSite() throws InterruptedException {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor)web_driver;
+		String page_title = "";
+
+		Actions action_builders = new Actions(web_driver);
+
 		page_title = web_driver.getTitle();
 		System.out.println("Page Title : "+page_title);
-		
+
 		WebElement search_input = web_driver.findElement(By.cssSelector("#search-inp3"));
 		System.out.println(search_input.isDisplayed());
 		//search_input.sendKeys("Selenium Certification");
@@ -81,28 +171,28 @@ public class HandlingMultipleWindowsExamples {
 		System.out.println(search_icon.isDisplayed());
 		//action_builders.click(search_icon);
 		WebElement courses_menu = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
-		
+
 		//Actions action_builders = new Actions(web_driver);
 		//action_builders.sendKeys(Keys.CONTROL).keyDown(Keys.SHIFT).click(courses_menu).keyUp(Keys.SHIFT).build();
 		Action action_series = action_builders.moveToElement(search_input)
 				.sendKeys(search_input, "Selenium Certifications")
 				.moveToElement(search_icon)
 				.click(search_icon)
-//				.keyDown(Keys.CONTROL)
+				//				.keyDown(Keys.CONTROL)
 				.keyDown(search_icon, Keys.SHIFT)
 				.keyUp(search_icon, Keys.SHIFT)
 				.build();
 		action_series.perform();
-//		search_input.submit();
+		//		search_input.submit();
 		//search_icon.submit();
 		action_builders.sendKeys(Keys.CONTROL).keyDown(Keys.SHIFT).click(courses_menu).keyUp(Keys.SHIFT).build();
 		Thread.sleep(2000);
-		
+
 		Set<String> openedWindows = web_driver.getWindowHandles();
 		System.out.println("How Many Windows Are Opened : "+openedWindows.size());
 		System.out.println(openedWindows);
 		System.out.println("First Chekpoint");
-		
+
 		for(String window : openedWindows) {
 			String check_title = web_driver.getTitle();
 			System.out.println("Current Page Title Is : "+check_title);
@@ -120,14 +210,14 @@ public class HandlingMultipleWindowsExamples {
 				Thread.sleep(2000);
 			}
 		}
-		
+
 		Thread.sleep(2000);
-		
+
 		Set<String> allWindows = web_driver.getWindowHandles();
 		System.out.println("Currently Opened : "+allWindows.size());
 		System.out.println(allWindows);
 		System.out.println("Fifth Chekpoint");
-		
+
 		for(String handle : allWindows) {
 			web_driver.switchTo().window(handle);
 			System.out.println("Sixth Chekpoint");
@@ -137,7 +227,7 @@ public class HandlingMultipleWindowsExamples {
 	}
 
 	public static void testOnSiteNaukri( ) {
-		
+
 		String getParentWindowHandle = web_driver.getWindowHandle();
 		Set<String> allWindows = web_driver.getWindowHandles();
 
@@ -152,7 +242,7 @@ public class HandlingMultipleWindowsExamples {
 		}
 		web_driver.switchTo().window(getParentWindowHandle);
 		System.out.println(web_driver.getTitle());
-		
+
 	}
 
 	public static void yetAnotherExampleTest() {
