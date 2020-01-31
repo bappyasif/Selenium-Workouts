@@ -1,0 +1,28 @@
+package multipleWindows;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HandlingExamples {
+	
+	static String test_URL = "https://www.edureka.co/";
+	static String project_path = System.getProperty("user.dir");
+	
+	public static void setpuBrowser() {
+		System.setProperty("webdriver.chrome.driver",project_path+"\\Lib\\WebDrivers\\chromedriver.exe");
+		WebDriver web_driver = new ChromeDriver();
+	}
+	
+	public static void commenceNavigation() {
+		
+	}
+	
+	public static void commenceTest() {
+		
+	}
+	
+	public static void tearDown() {
+		
+	}
+
+}
