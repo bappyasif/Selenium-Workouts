@@ -51,32 +51,80 @@ public class HandlingMultipleWindowsExamples {
 
 	public static void commenceNavigation() {
 		web_driver.get(base_URL);
-		web_driver.manage().window().maximize();
-		web_driver.manage().deleteAllCookies();
+		//web_driver.manage().window().maximize();
+		//web_driver.manage().deleteAllCookies();
 		web_driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.MILLISECONDS);
 		web_driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
 		System.out.println("Navigation Successful");
 	}
 
 	public static void commenceTest() throws InterruptedException {
-		
 		Actions actions = new Actions(web_driver);
 		Action action;
 		
-		//WebElement all_courses  = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
-		WebElement all_courses  = web_driver.findElement(By.linkText("Courses"));
+		WebElement search_input = web_driver.findElement(By.id("search-inp3"));
+		search_input.click();
+		WebElement search_overlays = web_driver.findElement(By.xpath("//input[@class=\"new-search-inp\"]"));
+		//search_input.sendKeys("Selenium Certification");
+		search_overlays.sendKeys("Selenium Certification");
+		//search_overlays.submit();
 		
-		actions.click(all_courses);
-//		action = actions
-//				.moveToElement(all_courses)
+		WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeaheadbutton\"]"));
+		//search_button.click();
+		actions.click(search_button);
+		
+		JavascriptExecutor jsExecutor;
+		jsExecutor = (JavascriptExecutor)web_driver;
+		jsExecutor.executeScript("window.scrollBy(0,40)");
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
+		//all_courses.click();
+		//actions.sendKeys(all_courses, Keys.CONTROL).keyDown(all_courses, Keys.SHIFT).keyUp(all_courses, Keys.SHIFT).build();
+		//actions.sendKeys(Keys.CONTROL).keyDown(Keys.SHIFT).click(all_courses).keyUp(Keys.SHIFT).build();
+		action = actions
+				.moveToElement(all_courses)
+				.sendKeys(Keys.CONTROL)
+//				.sendKeys(Keys.SHIFT)
+				.keyDown(Keys.SHIFT)
+				.click()
 //				.click(all_courses)
-//				.build();
+				.keyUp(Keys.SHIFT)
+				.build();
+		action.perform();
+		web_driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.MILLISECONDS);
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		jsExecutor = (JavascriptExecutor)web_driver;
+		jsExecutor.executeScript("window.scrollBy(0,100)");
+		
+//		Actions actions = new Actions(web_driver);
+//		Action action;
 //		
-//		action.perform();
-		
-		searchOptionOnEdureka();
-		
-		Thread.sleep(2000);
+//		//WebElement all_courses  = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
+//		WebElement all_courses  = web_driver.findElement(By.linkText("Courses"));
+//		
+//		actions.click(all_courses);
+////		action = actions
+////				.moveToElement(all_courses)
+////				.click(all_courses)
+////				.build();
+////		
+////		action.perform();
+//		
+//		searchOptionOnEdureka();
+//		
+//		Thread.sleep(2000);
 		
 	}
 	

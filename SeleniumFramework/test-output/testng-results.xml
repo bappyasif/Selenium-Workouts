@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11984" started-at="2020-01-15T20:19:06 BDT" finished-at="2020-01-15T20:19:18 BDT">
+  <suite name="Default suite" duration-ms="22390" started-at="2020-02-01T20:28:46 BDT" finished-at="2020-02-01T20:29:09 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11984" started-at="2020-01-15T20:19:06 BDT" finished-at="2020-01-15T20:19:18 BDT">
-      <class name="environmentTest.LoginAdminTestCase">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:environmentTest.LoginAdminTestCase@27a8c74e]" name="setUp" is-config="true" duration-ms="3187" started-at="2020-01-15T20:19:06 BDT" finished-at="2020-01-15T20:19:09 BDT">
+    <test name="Default test" duration-ms="22390" started-at="2020-02-01T20:28:46 BDT" finished-at="2020-02-01T20:29:09 BDT">
+      <class name="testNGExamples.AnotherUsage">
+        <test-method status="PASS" signature="setupBrowser()[pri:0, instance:testNGExamples.AnotherUsage@2173f6d9]" name="setupBrowser" is-config="true" duration-ms="4154" started-at="2020-02-01T20:28:46 BDT" finished-at="2020-02-01T20:28:50 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testLoginAdminTestCase()[pri:0, instance:environmentTest.LoginAdminTestCase@27a8c74e]" name="testLoginAdminTestCase" duration-ms="8091" started-at="2020-01-15T20:19:09 BDT" finished-at="2020-01-15T20:19:17 BDT">
+        </test-method> <!-- setupBrowser -->
+        <test-method status="PASS" signature="urlNavigation()[pri:0, instance:testNGExamples.AnotherUsage@2173f6d9]" name="urlNavigation" duration-ms="5190" started-at="2020-02-01T20:28:50 BDT" finished-at="2020-02-01T20:28:56 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginAdminTestCase -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:environmentTest.LoginAdminTestCase@27a8c74e]" name="tearDown" is-config="true" duration-ms="669" started-at="2020-01-15T20:19:17 BDT" finished-at="2020-01-15T20:19:18 BDT">
+        </test-method> <!-- urlNavigation -->
+        <test-method status="PASS" signature="commenceTest()[pri:1, instance:testNGExamples.AnotherUsage@2173f6d9]" name="commenceTest" duration-ms="848" started-at="2020-02-01T20:28:56 BDT" finished-at="2020-02-01T20:28:56 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commenceTest -->
+        <test-method status="PASS" signature="findElement()[pri:2, instance:testNGExamples.AnotherUsage@2173f6d9]" name="findElement" duration-ms="9789" started-at="2020-02-01T20:28:56 BDT" finished-at="2020-02-01T20:29:06 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findElement -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testNGExamples.AnotherUsage@2173f6d9]" name="tearDown" is-config="true" duration-ms="2374" started-at="2020-02-01T20:29:06 BDT" finished-at="2020-02-01T20:29:09 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- environmentTest.LoginAdminTestCase -->
+      </class> <!-- testNGExamples.AnotherUsage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

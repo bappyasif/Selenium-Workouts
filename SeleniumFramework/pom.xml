@@ -55,6 +55,15 @@
 			<version>2.13.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.13.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -69,13 +78,6 @@
 			<version>3.158.9</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.9.8</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -85,18 +87,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M4</version>
 				<configuration>
-<!-- 					<properties>
-						<maven.compiler.source>1.8</maven.compiler.source>
-						<maven.compiler.target>1.8</maven.compiler.target>
-					</properties>
-					<fork>true</fork>
-					<executable>C:\Program Files\Java\jdk-12.0.1\bin\javac.exe</executable> -->
-<!-- 					<suiteXmlFiles>
-						<suiteXmlFile>using Parameters.xml</suiteXmlFile> 
-						<suiteXmlFile>${testngFile}</suiteXmlFile>
-					</suiteXmlFiles> -->
+					<!-- <properties> <maven.compiler.source>1.8</maven.compiler.source> 
+						<maven.compiler.target>1.8</maven.compiler.target> </properties> <fork>true</fork> 
+						<executable>C:\Program Files\Java\jdk-12.0.1\bin\javac.exe</executable> -->
+					<!-- <suiteXmlFiles> <suiteXmlFile>using Parameters.xml</suiteXmlFile> 
+						<suiteXmlFile>${testngFile}</suiteXmlFile> </suiteXmlFiles> -->
 					<includes>
-					<include>UsingDependencies.java</include>
+						<include>UsingDependencies.java</include>
 					</includes>
 				</configuration>
 			</plugin>

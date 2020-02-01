@@ -1,5 +1,7 @@
 package multipleWindows;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,7 +19,7 @@ public class HandlingExamples {
 	static String project_path;
 	static JavascriptExecutor jsExecutor;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		setpuBrowser();
 		commenceNavigation();
 		commenceTest();
@@ -38,7 +40,7 @@ public class HandlingExamples {
 		System.out.println("Navigation Successful");
 	}
 	
-	public static void commenceTest() {
+	public static void commenceTest() throws InterruptedException {
 		WebElement search_input = web_driver.findElement(By.id("search-inp3"));
 		search_input.click();
 		WebElement search_overlays = web_driver.findElement(By.xpath("//input[@class=\"new-search-inp\"]"));
@@ -60,6 +62,11 @@ public class HandlingExamples {
 		
 		Actions actions = new Actions(web_driver);
 		Action action;
+		
+		WebElement scroll_tag = web_driver.findElement(By.xpath("//h2[contains(text(),'Discover Top Categories')]"));
+		actions.moveToElement(scroll_tag);
+		actions.perform();
+		
 		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
 		//all_courses.click();
 		//actions.sendKeys(all_courses, Keys.CONTROL).keyDown(all_courses, Keys.SHIFT).keyUp(all_courses, Keys.SHIFT).build();
@@ -73,15 +80,58 @@ public class HandlingExamples {
 				.keyUp(Keys.SHIFT)
 				.build();
 		action.perform();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		web_driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
+		Thread.sleep(8000);
 		
-		jsExecutor = (JavascriptExecutor)web_driver;
+		WebElement scroll_point = web_driver.findElement(By.xpath("//a[@class='giTrackElement'][contains(text(),'Programming & Frameworks')]"));
+		WebElement click_course = web_driver.findElement(By.xpath("//h3[contains(text(),'Selenium Certification Training')]"));
+//		actions.moveToElement(scroll_point);
+//		actions.perform();
+		
+//		action = actions.moveByOffset(0, 200).build();
+//		action.perform();
+		
 		jsExecutor.executeScript("window.scrollBy(0,100)");
+		
+		action = actions.moveToElement(click_course).click().build();
+		action.perform();
+		
+		action = actions
+				.moveByOffset(0, 100)
+				.moveToElement(scroll_point)
+//				.click()
+//				.click(scroll_point)
+				.build();
+		action.perform();
+		
+		//jsExecutor.executeScript("arguments[0].scrollIntoView(false);", scroll_point);
+		
+		//jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight || document.documentElement.scrollHeight)", "");
+		
+//		jsExecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		//jsExecutor.executeScript("window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: \"smooth\" });");
+		
+//		actions.moveToElement(scroll_tag);
+//		actions.perform();
+//		jsExecutor.executeScript("window.scrollBy(0,200)");
+//		try {
+//			Thread.sleep(4000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		//WebElement scroll_tag = web_driver.findElement(By.xpath("//h2[contains(text(),'Discover Top Categories')]"));
+//		actions.moveToElement(scroll_tag, 0, -100).perform();
+//		action = actions.moveToElement(scroll_tag, 0, -100).build();
+//		action.perform();
+//		actions.perform();
+		
+		
+//		JavascriptExecutor scriptExecutor;
+//		scriptExecutor = (JavascriptExecutor)web_driver;
+//		scriptExecutor.executeScript("window.scrollBy(0,650)");
+//		scriptExecutor.executeScript("document.querySelector('body').scrollTop-=100;");
 	}
 	
 	public static void tearDown() {
