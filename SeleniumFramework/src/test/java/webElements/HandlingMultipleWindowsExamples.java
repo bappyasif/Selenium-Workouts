@@ -51,8 +51,8 @@ public class HandlingMultipleWindowsExamples {
 
 	public static void commenceNavigation() {
 		web_driver.get(base_URL);
-		//web_driver.manage().window().maximize();
-		//web_driver.manage().deleteAllCookies();
+		web_driver.manage().window().maximize();
+		web_driver.manage().deleteAllCookies();
 		web_driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.MILLISECONDS);
 		web_driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
 		System.out.println("Navigation Successful");
@@ -62,17 +62,100 @@ public class HandlingMultipleWindowsExamples {
 		Actions actions = new Actions(web_driver);
 		Action action;
 		
+		JavascriptExecutor jsExecutor;
+
+		WebElement search_input = web_driver.findElement(By.id("search-inp3"));
+		search_input.click();
+		WebElement search_overlays = web_driver.findElement(By.xpath("//input[@class=\"new-search-inp\"]"));
+		//search_input.sendKeys("Selenium Certification");
+		search_overlays.sendKeys("Selenium Certification");
+		search_overlays.submit();
+
+
+		jsExecutor = (JavascriptExecutor)web_driver;
+		jsExecutor.executeScript("window.scrollBy(0,40)");
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+//		Actions actions = new Actions(web_driver);
+//		Action action;
+
+		WebElement scroll_tag = web_driver.findElement(By.xpath("//h2[contains(text(),'Discover Top Categories')]"));
+		actions.moveToElement(scroll_tag);
+		actions.perform();
+
+		String getParentWindowHandle = web_driver.getWindowHandle();
+		System.out.println(getParentWindowHandle);
+
+		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
+
+
+		action = actions
+				.moveToElement(all_courses)
+				.sendKeys(Keys.CONTROL)
+				//				.sendKeys(Keys.SHIFT)
+				.keyDown(Keys.SHIFT)
+				.click()
+				.keyUp(Keys.SHIFT)
+				.build();
+		action.perform();
+		web_driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
+		Thread.sleep(8000);
+
+
+		String courses_title = web_driver.getTitle(); 
+		System.out.println(courses_title);
+
+		if(courses_title.contains("Best Training")) {
+			WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
+			System.out.println(courses_list.isDisplayed());
+			actions.moveToElement(courses_list).click().perform();
+		}
+
+
+		Set<String> allOpenedWindowsHandle = web_driver.getWindowHandles();
+		System.out.println(allOpenedWindowsHandle.size());
+		System.out.println(allOpenedWindowsHandle);
+
+		web_driver.manage().window().setPosition(new Point(-600, 0));
+		System.out.println("Second Checkpoint");
+		Thread.sleep(4000);
+		jsExecutor.executeScript("window.scrollBy(0,99)");
+		Thread.sleep(4000);
+		System.out.println("Third Checkpoint");
+
+		for(String window : allOpenedWindowsHandle) {
+			String check_title = web_driver.getTitle().toString();
+			System.out.println(check_title);
+			web_driver.switchTo().window(window);
+			if(check_title.contains("Led Online")) {
+				jsExecutor.executeScript("window.scrollBy(0,1000)");
+				Thread.sleep(4000);
+				System.out.println("First Checkpoint");
+				break;
+			}
+		}
+
+	}
+
+	public static void anotherTry() {
+		Actions actions = new Actions(web_driver);
+		Action action;
 		WebElement search_input = web_driver.findElement(By.id("search-inp3"));
 		search_input.click();
 		WebElement search_overlays = web_driver.findElement(By.xpath("//input[@class=\"new-search-inp\"]"));
 		//search_input.sendKeys("Selenium Certification");
 		search_overlays.sendKeys("Selenium Certification");
 		//search_overlays.submit();
-		
+
 		WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeaheadbutton\"]"));
 		//search_button.click();
 		actions.click(search_button);
-		
+
 		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor)web_driver;
 		jsExecutor.executeScript("window.scrollBy(0,40)");
@@ -82,7 +165,7 @@ public class HandlingMultipleWindowsExamples {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
 		//all_courses.click();
 		//actions.sendKeys(all_courses, Keys.CONTROL).keyDown(all_courses, Keys.SHIFT).keyUp(all_courses, Keys.SHIFT).build();
@@ -90,10 +173,10 @@ public class HandlingMultipleWindowsExamples {
 		action = actions
 				.moveToElement(all_courses)
 				.sendKeys(Keys.CONTROL)
-//				.sendKeys(Keys.SHIFT)
+				//				.sendKeys(Keys.SHIFT)
 				.keyDown(Keys.SHIFT)
 				.click()
-//				.click(all_courses)
+				//				.click(all_courses)
 				.keyUp(Keys.SHIFT)
 				.build();
 		action.perform();
@@ -104,97 +187,96 @@ public class HandlingMultipleWindowsExamples {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		jsExecutor = (JavascriptExecutor)web_driver;
 		jsExecutor.executeScript("window.scrollBy(0,100)");
-		
-//		Actions actions = new Actions(web_driver);
-//		Action action;
-//		
-//		//WebElement all_courses  = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
-//		WebElement all_courses  = web_driver.findElement(By.linkText("Courses"));
-//		
-//		actions.click(all_courses);
-////		action = actions
-////				.moveToElement(all_courses)
-////				.click(all_courses)
-////				.build();
-////		
-////		action.perform();
-//		
-//		searchOptionOnEdureka();
-//		
-//		Thread.sleep(2000);
-		
+
+		//		Actions actions = new Actions(web_driver);
+		//		Action action;
+		//		
+		//		//WebElement all_courses  = web_driver.findElement(By.xpath("//li[@class='ga-allcourses']//a[@class='giTrackElementHeader'][contains(text(),'Courses')]"));
+		//		WebElement all_courses  = web_driver.findElement(By.linkText("Courses"));
+		//		
+		//		actions.click(all_courses);
+		////		action = actions
+		////				.moveToElement(all_courses)
+		////				.click(all_courses)
+		////				.build();
+		////		
+		////		action.perform();
+		//		
+		//		searchOptionOnEdureka();
+		//		
+		//		Thread.sleep(2000);
 	}
-	
+
 	public static void searchOptionOnEdureka() {
 		Actions action_builders = new Actions(web_driver);
-		
+
 		Action action_series;
-		
-		
+
+
 		WebElement search_input = web_driver.findElement(By.xpath("//input[@id=\"search-inp3\"]"));
 		//WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeahead__button new_search_typeahead_button\"]"));
 		WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeaheadbutton\"]"));
 		WebElement search_overlay = web_driver.findElement(By.xpath("//input[@id=\"search-inp-overlay-new\"]"));
-		
+
 		//search_input.sendKeys("Selenium Certification");
 		//action_builders.moveToElement(search_input).sendKeys("Selenium Certification");
 		//action_builders.sendKeys(search_input, "Selenium Certification");
 		//search_button.click();
-		
-		
+
+
 		action_series = action_builders
 				.moveToElement(search_input)
 				.sendKeys(search_input, "Selenium Certification")
-//				.moveToElement(search_overlay)
-//				.sendKeys(search_overlay, Keys.ENTER)
-//				.sendKeys(Keys.ENTER)
-//				.sendKeys(search_input, Keys.ENTER)
+				//				.moveToElement(search_overlay)
+				//				.sendKeys(search_overlay, Keys.ENTER)
+				//				.sendKeys(Keys.ENTER)
+				//				.sendKeys(search_input, Keys.ENTER)
 				.moveToElement(search_button)
 				.click(search_button)
 				.click()
-//				.moveToElement(search_button)
-//				.keyDown(search_button, Keys.SHIFT)
-//				.keyUp(search_button, Keys.SHIFT)
+				//				.moveToElement(search_button)
+				//				.keyDown(search_button, Keys.SHIFT)
+				//				.keyUp(search_button, Keys.SHIFT)
 				.build();
-		
+
 		action_series.perform();
-		
+
 		//Thread.sleep(4000);
 		//search_button.click();
 		//search_input.submit();
-//		action_series = action_builders
-//				.moveToElement(search_input)
-//				.sendKeys(Keys.ENTER)
-//				.build();
-//		//action_series.perform();
+		//		action_series = action_builders
+		//				.moveToElement(search_input)
+		//				.sendKeys(Keys.ENTER)
+		//				.build();
+		//		//action_series.perform();
 		//action_builders.sendKeys(search_input, Keys.ENTER);
 
 		//action_builders.sendKeys(search_overlay, Keys.ENTER);
 		//search_overlay.submit();
 		//search_overlay.sendKeys(Keys.ENTER);
 		//search_input.sendKeys(Keys.ENTER);
-		
-//		anotherSeries(action_builders, search_overlay);
-		
-		
+
+		//		anotherSeries(action_builders, search_overlay);
+
+
 		System.out.println(web_driver.getTitle());
 	}
-	
-//	public static void anotherSeries(Actions action_builders, WebElement search_overlay) throws InterruptedException {
-//		Action another_series;
-//		another_series = action_builders
-//				.moveToElement(search_overlay)
-//				.sendKeys(Keys.ENTER)
-//				.build();
-//		//action_series.perform();
-//		//action_series = action_builders.moveToElement(search_overlay).sendKeys(Keys.ENTER).build();
-//		//another_series = action_builders.sendKeys(search_overlay, Keys.ENTER).build();
-//		another_series.perform();
-//		Thread.sleep(4000);
-//	}
+
+	//	public static void anotherSeries(Actions action_builders, WebElement search_overlay) throws InterruptedException {
+	//		Action another_series;
+	//		another_series = action_builders
+	//				.moveToElement(search_overlay)
+	//				.sendKeys(Keys.ENTER)
+	//				.build();
+	//		//action_series.perform();
+	//		//action_series = action_builders.moveToElement(search_overlay).sendKeys(Keys.ENTER).build();
+	//		//another_series = action_builders.sendKeys(search_overlay, Keys.ENTER).build();
+	//		another_series.perform();
+	//		Thread.sleep(4000);
+	//	}
 
 	public static void testOnEdurekaSite() throws InterruptedException {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor)web_driver;

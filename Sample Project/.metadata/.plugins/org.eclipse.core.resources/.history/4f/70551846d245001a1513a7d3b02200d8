@@ -106,7 +106,7 @@ public class HandlingExamples {
 //				.moveToElement(click_course)
 //				.sendKeys(Keys.CONTROL)
 //				.keyDown(Keys.SHIFT)
-//				.click(click_course)
+////				.click(click_course)
 //				.click()
 //				.click(click_course)
 //				.keyUp(Keys.SHIFT)

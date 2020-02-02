@@ -88,8 +88,8 @@ public class HandlingExamples {
 		web_driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
 		Thread.sleep(8000);
 		
-//		WebElement scroll_point = web_driver.findElement(By.xpath("//a[@class='giTrackElement'][contains(text(),'Programming & Frameworks')]"));
-//		WebElement click_course = web_driver.findElement(By.xpath("//h3[contains(text(),'Selenium Certification Training')]"));
+		WebElement scroll_point = web_driver.findElement(By.xpath("//a[@class='giTrackElement'][contains(text(),'Programming & Frameworks')]"));
+		WebElement click_course = web_driver.findElement(By.xpath("//h3[contains(text(),'Selenium Certification Training')]"));
 //		actions.moveToElement(scroll_point);
 //		actions.perform();
 		
@@ -101,26 +101,17 @@ public class HandlingExamples {
 //		action = actions.moveToElement(click_course).click().build();
 //		action.perform();
 		
-//		System.out.println(click_course.isDisplayed());
-//		action = actions
-//				.moveToElement(click_course)
-//				.sendKeys(Keys.CONTROL)
-//				.keyDown(Keys.SHIFT)
+		System.out.println(click_course.isDisplayed());
+		action = actions
+				.moveToElement(click_course)
+				.sendKeys(Keys.CONTROL)
+				.keyDown(Keys.SHIFT)
 //				.click(click_course)
-//				.click()
-//				.click(click_course)
-//				.keyUp(Keys.SHIFT)
-//				.build();
-//		action.perform();
-		
-		String courses_title = web_driver.getTitle(); 
-		System.out.println(courses_title);
-		
-		if(courses_title.contains("Best Training")) {
-			WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
-			System.out.println(courses_list.isDisplayed());
-			actions.moveToElement(courses_list).click().perform();
-		}
+				.click()
+				.click(click_course)
+				.keyUp(Keys.SHIFT)
+				.build();
+		action.perform();
 		//click_course.click();
 //		action = actions
 //				.moveByOffset(0, 100)
@@ -164,11 +155,10 @@ public class HandlingExamples {
 		
 		Set<String> allOpenedWindowsHandle = web_driver.getWindowHandles();
 		System.out.println(allOpenedWindowsHandle.size());
-		System.out.println(allOpenedWindowsHandle);
 		
-//		WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
-//		System.out.println(courses_list.isDisplayed());
-//		actions.moveToElement(courses_list).click().perform();
+		WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
+		System.out.println(courses_list.isDisplayed());
+		actions.moveToElement(courses_list).click().perform();
 		web_driver.manage().window().setPosition(new Point(-600, 0));
 		System.out.println("Second Checkpoint");
 		Thread.sleep(4000);
@@ -184,7 +174,6 @@ public class HandlingExamples {
 				jsExecutor.executeScript("window.scrollBy(0,1000)");
 				Thread.sleep(4000);
 				System.out.println("First Checkpoint");
-				break;
 			}
 		}
 		

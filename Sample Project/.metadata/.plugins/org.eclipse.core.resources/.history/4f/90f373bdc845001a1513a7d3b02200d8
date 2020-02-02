@@ -1,12 +1,10 @@
 package multipleWindows;
 
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -69,9 +67,6 @@ public class HandlingExamples {
 		actions.moveToElement(scroll_tag);
 		actions.perform();
 		
-		String getParentWindowHandle = web_driver.getWindowHandle();
-		System.out.println(getParentWindowHandle);
-		
 		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
 		//all_courses.click();
 		//actions.sendKeys(all_courses, Keys.CONTROL).keyDown(all_courses, Keys.SHIFT).keyUp(all_courses, Keys.SHIFT).build();
@@ -88,8 +83,8 @@ public class HandlingExamples {
 		web_driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
 		Thread.sleep(8000);
 		
-//		WebElement scroll_point = web_driver.findElement(By.xpath("//a[@class='giTrackElement'][contains(text(),'Programming & Frameworks')]"));
-//		WebElement click_course = web_driver.findElement(By.xpath("//h3[contains(text(),'Selenium Certification Training')]"));
+		WebElement scroll_point = web_driver.findElement(By.xpath("//a[@class='giTrackElement'][contains(text(),'Programming & Frameworks')]"));
+		WebElement click_course = web_driver.findElement(By.xpath("//h3[contains(text(),'Selenium Certification Training')]"));
 //		actions.moveToElement(scroll_point);
 //		actions.perform();
 		
@@ -101,26 +96,16 @@ public class HandlingExamples {
 //		action = actions.moveToElement(click_course).click().build();
 //		action.perform();
 		
-//		System.out.println(click_course.isDisplayed());
-//		action = actions
-//				.moveToElement(click_course)
-//				.sendKeys(Keys.CONTROL)
-//				.keyDown(Keys.SHIFT)
+		System.out.println(click_course.isDisplayed());
+		action = actions
+				.moveToElement(click_course)
+				.sendKeys(Keys.CONTROL)
+				.keyDown(Keys.SHIFT)
 //				.click(click_course)
-//				.click()
-//				.click(click_course)
-//				.keyUp(Keys.SHIFT)
-//				.build();
-//		action.perform();
-		
-		String courses_title = web_driver.getTitle(); 
-		System.out.println(courses_title);
-		
-		if(courses_title.contains("Best Training")) {
-			WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
-			System.out.println(courses_list.isDisplayed());
-			actions.moveToElement(courses_list).click().perform();
-		}
+				.click()
+				.keyUp(Keys.SHIFT)
+				.build();
+		action.perform();
 		//click_course.click();
 //		action = actions
 //				.moveByOffset(0, 100)
@@ -158,52 +143,6 @@ public class HandlingExamples {
 //		scriptExecutor = (JavascriptExecutor)web_driver;
 //		scriptExecutor.executeScript("window.scrollBy(0,650)");
 //		scriptExecutor.executeScript("document.querySelector('body').scrollTop-=100;");
-		
-//		WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
-//		System.out.println(courses_list.isDisplayed());
-		
-		Set<String> allOpenedWindowsHandle = web_driver.getWindowHandles();
-		System.out.println(allOpenedWindowsHandle.size());
-		System.out.println(allOpenedWindowsHandle);
-		
-//		WebElement courses_list = web_driver.findElement(By.xpath("//a[@class='active']"));
-//		System.out.println(courses_list.isDisplayed());
-//		actions.moveToElement(courses_list).click().perform();
-		web_driver.manage().window().setPosition(new Point(-600, 0));
-		System.out.println("Second Checkpoint");
-		Thread.sleep(4000);
-		jsExecutor.executeScript("window.scrollBy(0,99)");
-		Thread.sleep(4000);
-		System.out.println("Third Checkpoint");
-		
-		for(String window : allOpenedWindowsHandle) {
-			String check_title = web_driver.getTitle().toString();
-			System.out.println(check_title);
-			web_driver.switchTo().window(window);
-			if(check_title.contains("Led Online")) {
-				jsExecutor.executeScript("window.scrollBy(0,1000)");
-				Thread.sleep(4000);
-				System.out.println("First Checkpoint");
-				break;
-			}
-		}
-		
-//		WebElement all_courses = web_driver.findElement(By.linkText("Courses"));
-//		//all_courses.click();
-//		//actions.sendKeys(all_courses, Keys.CONTROL).keyDown(all_courses, Keys.SHIFT).keyUp(all_courses, Keys.SHIFT).build();
-//		//actions.sendKeys(Keys.CONTROL).keyDown(Keys.SHIFT).click(all_courses).keyUp(Keys.SHIFT).build();
-//		action = actions
-//				.moveToElement(all_courses)
-//				.sendKeys(Keys.CONTROL)
-////				.sendKeys(Keys.SHIFT)
-//				.keyDown(Keys.SHIFT)
-//				.click()
-//				.keyUp(Keys.SHIFT)
-//				.build();
-//		action.perform();
-//		web_driver.manage().timeouts().pageLoadTimeout(4000, TimeUnit.MILLISECONDS);
-//		Thread.sleep(8000);
-
 	}
 	
 	public static void tearDown() {
