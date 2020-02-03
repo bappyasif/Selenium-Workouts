@@ -41,7 +41,9 @@ public class HandlingMultipleWindowsExamples {
 	}
 
 	public static void setupBrowser() {
-		WebDriverManager.chromedriver().setup();
+		String project_dir = System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", project_dir+"\\WebDrivers\\chromeDriver\\chromedriver.exe");
+		//WebDriverManager.chromedriver().setup();
 		//		ChromeOptions chromeOptions = new ChromeOptions();
 		//		chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
 		//		chromeOptions.addArguments("--headless");
@@ -61,7 +63,7 @@ public class HandlingMultipleWindowsExamples {
 	public static void commenceTest() throws InterruptedException {
 		Actions actions = new Actions(web_driver);
 		Action action;
-		
+
 		JavascriptExecutor jsExecutor;
 
 		WebElement search_input = web_driver.findElement(By.id("search-inp3"));
@@ -69,7 +71,11 @@ public class HandlingMultipleWindowsExamples {
 		WebElement search_overlays = web_driver.findElement(By.xpath("//input[@class=\"new-search-inp\"]"));
 		//search_input.sendKeys("Selenium Certification");
 		search_overlays.sendKeys("Selenium Certification");
-		search_overlays.submit();
+		//search_overlays.submit();
+		//		search_overlays.sendKeys(Keys.ENTER);
+		WebElement search_button = web_driver.findElement(By.xpath("//span[@class=\"typeaheadbutton\"]"));
+		//search_button.click();
+		actions.click(search_button);
 
 
 		jsExecutor = (JavascriptExecutor)web_driver;
@@ -81,12 +87,12 @@ public class HandlingMultipleWindowsExamples {
 			e.printStackTrace();
 		}
 
-//		Actions actions = new Actions(web_driver);
-//		Action action;
+		//		Actions actions = new Actions(web_driver);
+		//		Action action;
 
-		WebElement scroll_tag = web_driver.findElement(By.xpath("//h2[contains(text(),'Discover Top Categories')]"));
-		actions.moveToElement(scroll_tag);
-		actions.perform();
+		//		WebElement scroll_tag = web_driver.findElement(By.xpath("//h2[contains(text(),'Discover Top Categories')]"));
+		//		actions.moveToElement(scroll_tag);
+		//		actions.perform();
 
 		String getParentWindowHandle = web_driver.getWindowHandle();
 		System.out.println(getParentWindowHandle);
@@ -97,7 +103,7 @@ public class HandlingMultipleWindowsExamples {
 		action = actions
 				.moveToElement(all_courses)
 				.sendKeys(Keys.CONTROL)
-				//				.sendKeys(Keys.SHIFT)
+				//.sendKeys(Keys.SHIFT)
 				.keyDown(Keys.SHIFT)
 				.click()
 				.keyUp(Keys.SHIFT)
